@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Responsive Web Design</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Josh Bebbington">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+					<h1>Responsive Web Design</h1>
+				</section>
+
+				<section>
+					<h2>Why use RWD?</h2>
+					<ul>
+						<li>Phones</li>
+						<li>Tablets</li>
+						<li>'Phablets'</li>
+						<li>Laptops</li>
+						<li>Desktops</li>
+						<li>Wearables</li>
+					</ul>
+				</section>
+
+				<section>
+					<img src="images/hackernews.png" width="320px">
+					<img src="images/bad-phone-size.png" width="320px" style="margin-left: 10%;">
+				</section>
+
+				<section> 
+					<img src="images/github.png" width="320px">
+					<img src="images/good-phone-size.png" width="320px" style="margin-left: 10%;">
+				</section>
+
+				<section id="fragments">
+					<h2>How do you do it?</h2>
+					<ul>
+						<li class="fragment">Use relative measurements instead of px</li>
+						<li class="fragment">Set up the viewport</li>
+						<li class="fragment">Add breakpoints to your CSS</li>
+					</ul>
+				</section>
+
+				<section>
+					<section>
+						<h2>Relative measurements</h2>
+						<pre><code data-trim>
+.container {
+  width: 800px;
+}
+
+img {
+  max-width: 250px;
+  height: 100px;
+}
+</code>
+						</pre>
+					</section>
+
+					<section>
+						<h2>Relative measurements</h2>
+						<pre>
+							<code data-trim>
+.container {
+  width: 80%;
+}
+
+img {
+  width: 10em;
+  height: 10em;
+}
+						  </code>
+						</pre>
+					</section>
+				</section>
+
+				<section>
+				  <h2>Set up the viewport</h2>
+          <pre>
+            <code data-trim>
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+            </code>
+          </pre>
+          <ul>
+            <li><strong>meta</strong> - Describes some aspect of the contents of a page</li>
+            <li><strong>viewport</strong> - Instructions for the browser to render content dependent on the screen size</li>
+            <li><strong>width=device-width, initial-scale=1</strong> - The browser will render the screen in device independent pixels
+          </ul>
+				</section>
+
+        <section>
+          <h2>Add breakpoints to your CSS</h2>
+          <pre>
+            <code data-trim>
+@media screen and (max-width: 320px) {
+  /* CSS styles for phones go here */
+}
+            </code>
+          </pre>
+          <ul>
+            <li><strong>@media screen</strong> - Media query that only applies to screens</li>
+            <li><strong>(max-width: 320px)</strong> - Styles will only apply when the viewport is less than 320px wide</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Good Practises</h2>
+          <ul>
+            <li>Breakpoints should be decided by <em>content</em>, not by <em>device</em></li>
+            <li>Start from the smallest screen size, and work up from there, adding breakpoints as appropriate</li>
+            <li>Ideal line length for text is 70-80 characters</li>
+          </ul>
+        </section>
+
+				<section>
+					Thermostat Demo
+				</section>
+
+				
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

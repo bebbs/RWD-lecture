@@ -1,0 +1,104 @@
+@import url('normalize.css');
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+        box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  font-family: helvetica-bold;
+}
+
+button {
+  border: none;
+  background: none;
+  font-size: 2.7em;
+  padding: .1em;
+}
+
+.left-col {
+  width: 60%;
+  float: left;
+}
+
+.right-col {
+  width: 37%;
+  height: 100%;
+  float: left;
+  background-color: black;
+  margin-left: 3%;
+}
+
+.rotated-text {
+  height: 90%;
+  margin-left: -1.15em;
+}
+
+.display {
+  text-align: right;
+  height: 40%;
+  margin-top: 10%;
+}
+
+#temperature {
+  font-size: 15em;
+  margin-bottom: 1em;
+  color: #f1c40f;
+}
+
+.temperature-buttons {
+  margin-bottom: 1em;
+}
+
+.power-saving-mode {
+  background-color: #f1c40f;
+  line-height: 1em;
+  margin-bottom: 1em;
+}
+
+#psm-label {
+  font-size: 2em;
+  padding-left: 1em;
+  background-color: white;
+}
+
+#sml-screen-degrees {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .right-col {
+    display: none;
+  }
+
+  .left-col {
+    width: 100%;
+  }
+
+  .display {
+    margin-top: 3em;
+    text-align: center;
+  }
+
+  #psm-label {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  #sml-screen-degrees {
+    display: block;
+    background-color: black;
+    color: white;
+    line-height: 2em;
+    font-size: 2em;
+  }
+
+}
